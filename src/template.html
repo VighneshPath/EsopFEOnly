@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Esop Trading Platform</title>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="container">
+          <form action="" id = "esop-form" class="form-group">
+            <div class="form-element">
+              <label for="esop-quantity">Esop Quantity</label>
+              <input type="text" id="esop-quantity">
+            </div>
+
+            <div class="form-element">
+              <label for="esop-order-type">Esop Order Type</label>
+              <select id="esop-order-type">
+                <option value="BUY">BUY</option>
+                <option value="SELL">SELL</option>
+              </select>
+            </div>
+            
+            <div class="form-element">
+              <label for="esop-price">Esop Price</label>
+              <input type="text" id="esop-price">
+            </div>
+            
+            <div class="form-element" id="esop-type-div">
+            </div>
+
+
+            <div class="form-element">
+              <input type="submit" value="Submit">
+            </div>
+
+          </form>
+
+          <div class="order-response">
+            
+          </div>
+      </div>
+    </div>
   </body>
 </html>
