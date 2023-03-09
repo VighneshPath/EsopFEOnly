@@ -2,12 +2,17 @@ class GetFormData{
     constructor(customDocument){
         this.customDocument = customDocument;
     }
-    getData = (formElement) => {
-        let orderQuantity = this.customDocument.getElementById("esop-quantity").value;
-        let orderPrice = this.customDocument.getElementById("esop-price").value;
-        let orderType = this.customDocument.getElementById("esop-order-type").value;
+    getData = () => {
+        let data =  {
+            "quantity": this.customDocument.getElementById("esop-quantity").value,
+            "price": this.customDocument.getElementById("esop-price").value,
+            "type": this.customDocument.getElementById("esop-order-type").value
+        }
+        if((this.customDocument.getElementById("esop-type") != null)){
+            data.esopType = this.customDocument.getElementById("esop-type").value;
+        }
 
-        console.log(orderQuantity +" "+orderPrice + " "+orderType);
+        return data;
     }
 }
 

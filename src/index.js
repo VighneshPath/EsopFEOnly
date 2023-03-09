@@ -1,7 +1,9 @@
 import './styles/main.scss';
 import './css/index.css';
-import { UpdateForm } from './scripts/order/updateForm';
-import {GetFormData} from './scripts/order/getFormData';
+import { UpdateForm } from './scripts/order/UpdateForm';
+import {GetFormData} from './scripts/order/GetFormData';
+import { Order } from './scripts/order/Order';
+import axios from 'axios';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let orderTypeElement = document.getElementById("esop-order-type");
@@ -15,9 +17,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     e.preventDefault();
 
     const getFormData = new GetFormData(document);
+    const order = new Order(axios, document);
 
-    getFormData.getData();
-
+    order.placeOrder(getFormData.getData());
+      
     return false;
   });
 })

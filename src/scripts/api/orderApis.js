@@ -4,7 +4,7 @@ class OrderApis{
     }
 
     post = (url, data)=>{
-        return this.apiClient.get(url, data)
+        return this.apiClient.post(url, data, { withCredentials: true })
     }
 }
 

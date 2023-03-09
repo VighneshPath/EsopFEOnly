@@ -14,7 +14,7 @@ class UpdateForm{
             <label for="esop-type">Esop Type</label>
             <select id="esop-type">
               <option value="PERFORMANCE">PERFORMANCE</option>
-              <option value="SELL">NON_PERFORMANCE</option>
+              <option value="NON_PERFORMANCE">NON_PERFORMANCE</option>
             </select>
             `;
             esopTypeDiv.innerHTML = performanceTypeHtml;
