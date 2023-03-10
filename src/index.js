@@ -26,7 +26,8 @@ import { OrderApi } from './scripts/order/OrderApi';
 //     const getFormData = new GetFormData(document);
 //     const apiClient = new ApiClient(axios);
 //     const orderApi = new OrderApi(apiClient);
-//     //const formValidator = new ValidateFormData(document);
+//     const formValidator = new ValidateFormData(document);
+//     formValidator.validateForm();
 //     const order = new Order(orderApi, document);
 
 //     order.placeOrder(getFormData.getData());

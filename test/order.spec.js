@@ -1,7 +1,7 @@
 import { Order } from "../src/scripts/order/Order";
 
 describe("should test Order", ()=>{
-    let customDoc = jasmine.createSpyObj('CustomDocument', ['getElementById']);
+    let customDoc = jasmine.createSpyObj('CustomDocument', ['getElementById', 'addEventListener']);
     beforeEach(()=>{
         customDoc.getElementById.and.returnValue(
             {
@@ -10,7 +10,8 @@ describe("should test Order", ()=>{
                     return true;
                 }
             }
-        )
+        );
+        customDoc.addEventListener.and.returnValue(true);
         customDoc.getElementById.calls.reset();
     });
 
