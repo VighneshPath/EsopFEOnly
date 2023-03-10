@@ -1,4 +1,4 @@
-class OrderApis{
+class ApiClient{
     constructor(apiClient){
         this.apiClient = apiClient;
     }
@@ -8,4 +8,4 @@ class OrderApis{
     }
 }
 
-export {OrderApis};
+export {ApiClient};

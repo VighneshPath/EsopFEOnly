@@ -5,7 +5,10 @@ import {GetFormData} from './scripts/order/GetFormData';
 import { Order } from './scripts/order/Order';
 import axios from 'axios';
 import { CustomDocument } from './scripts/documents/CustomDocument';
-import { OrderApis } from './scripts/api/OrderApis';
+import { ApiClient } from './scripts/api/ApiClient';
+import { ValidateFormData } from './scripts/order/ValidateFormData';
+import { OrderApi } from './scripts/order/OrderApi';
+
 
 // let customDocument = new CustomDocument(document);
 
@@ -21,8 +24,10 @@ import { OrderApis } from './scripts/api/OrderApis';
 //     e.preventDefault();
 
 //     const getFormData = new GetFormData(document);
-//     const orderApis = new OrderApis(axios);
-//     const order = new Order(orderApis, document);
+//     const apiClient = new ApiClient(axios);
+//     const orderApi = new OrderApi(apiClient);
+//     //const formValidator = new ValidateFormData(document);
+//     const order = new Order(orderApi, document);
 
 //     order.placeOrder(getFormData.getData());
 

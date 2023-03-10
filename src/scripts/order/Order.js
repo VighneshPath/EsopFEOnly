@@ -1,22 +1,22 @@
-import {OrderApis} from "../api/OrderApis";
-
 class Order{
-    constructor(orderApis, customDocument){
-        this.orderApis = orderApis;
+    constructor(orderApi, customDocument){
+        this.orderApi = orderApi;
         this.customDocument = customDocument;
     }
     placeOrder = (orderData)=>{
-        let promise = this.orderApis.post("http://localhost:8080/user/vighnesh/order", orderData);
-        promise.then((response)=>{
-            this.success(response.data);
-        }).catch((error)=>{
-            this.failure(error.response.data);
-        });
+        console.log(this.orderApi);
+        this.orderApi.placeOrder(orderData, this.success, this.failure);
     }
 
     success = (data)=>{
         this.removeForm();
+        this.clearErrorDiv();
         this.addOrderSuccessResponse(data);
+    }
+
+    clearErrorDiv = ()=>{
+        let orderResponseDiv = this.customDocument.getElementById("order-failure");
+        orderResponseDiv.innerHTML = "";
     }
 
     removeForm = ()=>{
@@ -42,7 +42,6 @@ class Order{
             htmlToBeAdded += (`<p>`+data.errors[property]+`</p>`);
         }
         orderResponseDiv.innerHTML = htmlToBeAdded;
-        alert(orderResponseDiv);
     }
 }
 
