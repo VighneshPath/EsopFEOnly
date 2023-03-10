@@ -1,14 +1,12 @@
 import {OrderApis} from "../api/OrderApis";
 
 class Order{
-    constructor(apiClient, customDocument){
-        this.apiClient = apiClient;
+    constructor(orderApis, customDocument){
+        this.orderApis = orderApis;
         this.customDocument = customDocument;
     }
     placeOrder = (orderData)=>{
-        let orderApis = new OrderApis(this.apiClient);
-
-        let promise = orderApis.post("http://localhost:8080/user/vighnesh/order", orderData);
+        let promise = this.orderApis.post("http://localhost:8080/user/vighnesh/order", orderData);
         promise.then((response)=>{
             this.success(response.data);
         }).catch((error)=>{
@@ -44,6 +42,7 @@ class Order{
             htmlToBeAdded += (`<p>`+data.errors[property]+`</p>`);
         }
         orderResponseDiv.innerHTML = htmlToBeAdded;
+        alert(orderResponseDiv);
     }
 }
 
