@@ -4,15 +4,18 @@ import { UpdateForm } from './scripts/order/UpdateForm';
 import {GetFormData} from './scripts/order/GetFormData';
 import { Order } from './scripts/order/Order';
 import axios from 'axios';
+import { CustomDocument } from './scripts/documents/CustomDocument';
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  let orderTypeElement = document.getElementById("esop-order-type");
+let customDocument = new CustomDocument(document);
+
+customDocument.addEventListener("DOMContentLoaded", ()=>{
+  let orderTypeElement = customDocument.getElementById("esop-order-type");
   orderTypeElement.addEventListener("change", ()=>{
     let formUpdate = new UpdateForm(document);
     formUpdate.updateEsopTypeDiv();
   });
 
-  let formElement = document.getElementById("esop-form");
+  let formElement = customDocument.getElementById("esop-form");
   formElement.addEventListener("submit", (e)=>{
     e.preventDefault();
 
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const order = new Order(axios, document);
 
     order.placeOrder(getFormData.getData());
-      
+
     return false;
   });
 })
