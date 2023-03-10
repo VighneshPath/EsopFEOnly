@@ -32,6 +32,7 @@ module.exports = function(config) {
 
     // list of files / patterns to exclude
     exclude: [
+      "src/index.js"
     ],
 
 
@@ -135,6 +136,7 @@ module.exports = function(config) {
       },
     },
 
+    
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

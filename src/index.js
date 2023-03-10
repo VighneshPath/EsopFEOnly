@@ -10,28 +10,28 @@ import { ValidateFormData } from './scripts/order/ValidateFormData';
 import { OrderApi } from './scripts/order/OrderApi';
 
 
-// let customDocument = new CustomDocument(document);
+let customDocument = new CustomDocument(document);
 
-// customDocument.addEventListener("DOMContentLoaded", ()=>{
-//   let orderTypeElement = customDocument.getElementById("esop-order-type");
-//   orderTypeElement.addEventListener("change", ()=>{
-//     let formUpdate = new UpdateForm(document);
-//     formUpdate.updateEsopTypeDiv();
-//   });
+customDocument.addEventListener("DOMContentLoaded", ()=>{
+  let orderTypeElement = customDocument.getElementById("esop-order-type");
+  orderTypeElement.addEventListener("change", ()=>{
+    let formUpdate = new UpdateForm(document);
+    formUpdate.updateEsopTypeDiv();
+  });
 
-//   let formElement = customDocument.getElementById("esop-form");
-//   formElement.addEventListener("submit", (e)=>{
-//     e.preventDefault();
+  let formElement = customDocument.getElementById("esop-form");
+  formElement.addEventListener("submit", (e)=>{
+    e.preventDefault();
 
-//     const getFormData = new GetFormData(document);
-//     const apiClient = new ApiClient(axios);
-//     const orderApi = new OrderApi(apiClient);
-//     const formValidator = new ValidateFormData(document);
-//     formValidator.validateForm();
-//     const order = new Order(orderApi, document);
+    const getFormData = new GetFormData(document);
+    const apiClient = new ApiClient(axios);
+    const orderApi = new OrderApi(apiClient);
+    const formValidator = new ValidateFormData(document);
+    formValidator.validateForm();
+    const order = new Order(orderApi, document);
 
-//     order.placeOrder(getFormData.getData());
+    order.placeOrder(getFormData.getData());
 
-//     return false;
-//   });
-// })
+    return false;
+  });
+})
