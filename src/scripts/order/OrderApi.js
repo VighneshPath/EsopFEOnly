@@ -5,9 +5,11 @@ class OrderApi{
     placeOrder=(orderData, successFunction, failureFunction)=>{
         this.apiClient.post("http://localhost:8080/user/vighnesh/order", orderData)
         .then((response)=>{
+            alert(response);
             successFunction(response.data);
         })
         .catch((error)=>{
+            alert(error);
             failureFunction(error.response.data);
         })
     }
