@@ -1,9 +1,9 @@
-class OrderApi{
+class OrderHistoryApi{
     constructor(apiClient){
         this.apiClient = apiClient
     }
-    placeOrder=(orderData, successFunction, failureFunction)=>{
-        this.apiClient.post("http://localhost:8080/user/vighnesh/order", orderData)
+    getOrderHistory=(successFunction, failureFunction)=>{
+        this.apiClient.get("http://localhost:8080/user/vighnesh/orderHistory")
         .then((response)=>{
             successFunction(response.data);
         })
@@ -13,4 +13,4 @@ class OrderApi{
     }
 }
 
-export {OrderApi};
+export {OrderHistoryApi};

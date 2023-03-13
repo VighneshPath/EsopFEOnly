@@ -32,7 +32,8 @@ module.exports = function(config) {
 
     // list of files / patterns to exclude
     exclude: [
-      "src/index.js"
+      "src/index.js",
+      "src/orderHistIndex.js"
     ],
 
 
@@ -85,7 +86,8 @@ module.exports = function(config) {
 
     webpack:{
       entry: {
-        main: path.resolve(__dirname, './src/index.js'),
+        order: path.resolve(__dirname, './src/index.js'),
+        orderHistory: path.resolve(__dirname, "./src/orderHistIndex.js")
       },
       output: {
         path: path.resolve(__dirname, './dist'),
@@ -105,6 +107,13 @@ module.exports = function(config) {
           title: 'webpack Boilerplate',
           template: path.resolve(__dirname, './src/template.html'), // template file
           filename: 'index.html', // output file
+          chunks: ['order']
+        }),
+        new HtmlWebpackPlugin({
+          title: 'webpack Boilerplate',
+          template: path.resolve(__dirname, './src/orderHistory.html'), // template file
+          filename: 'orderHistory.html', // output file
+          chunks: ['orderHistory']
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),

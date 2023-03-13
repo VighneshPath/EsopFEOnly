@@ -5,7 +5,8 @@ const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    order: path.resolve(__dirname, './src/index.js'),
+    orderHistory: path.resolve(__dirname, "./src/orderHistIndex.js")
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -25,6 +26,13 @@ module.exports = {
       title: 'webpack Boilerplate',
       template: path.resolve(__dirname, './src/template.html'), // template file
       filename: 'index.html', // output file
+      chunks: ['order']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'webpack Boilerplate',
+      template: path.resolve(__dirname, './src/orderHistory.html'), // template file
+      filename: 'orderHistory.html', // output file
+      chunks: ['orderHistory']
     }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
