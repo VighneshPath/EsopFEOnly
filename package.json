@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve",
-    "test": "karma start my.conf.js"
+    "test": "karma start my.conf.js",
+    "testLooks": "cypress run --config video=false"
   },
   "keywords": [],
   "author": "",
