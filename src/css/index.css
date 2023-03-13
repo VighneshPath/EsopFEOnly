@@ -1,3 +1,50 @@
-body {
-    color: black;
+html, body{
+	height: 100%;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    margin:0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+#root{
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+
+.item{
+    width: auto;
+}
+
+
+.nav-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.nav-list li{
+    display: inline;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 2%;
+}
+
+.nav-list li a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
 }
